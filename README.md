@@ -23,7 +23,7 @@
 4. Generate an application key: `php artisan key:generate`
 5. Run the database migrations: `php artisan migrate`
 6. Seed the database with sample data: `php artisan db:seed`
-7. API Collection `https://documenter.getpostman.com/view/15937310/2sA3BuXV5p`
+7. API Collection: `https://documenter.getpostman.com/view/15937310/2sA3BuXV5p`
 
 
 ## Usage
