@@ -3,10 +3,8 @@
 namespace App\Interfaces;
 
 use App\Models\User;
-use Illuminate\Pagination\LengthAwarePaginator;
 use App\Http\Resources\User\{
     UserCollection,
-    UserResource
 };
 
 interface UserServiceInterface

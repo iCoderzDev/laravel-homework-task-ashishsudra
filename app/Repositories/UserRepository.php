@@ -4,11 +4,6 @@ namespace App\Repositories;
 
 use App\Interfaces\UserRepositoryInterface;
 use App\Models\{User,UserDetails};
-use Illuminate\Pagination\LengthAwarePaginator;
-use App\Http\Resources\User\{
-    UserCollection,
-    UserResource
-};
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Hash;
 
@@ -39,18 +34,17 @@ class UserRepository implements UserRepositoryInterface
                 $user->details()->save($address);
             }else {
                 $userDetails->fill(['address'=> $data['address']])->save();
+                $user->save();
             }
 
         }
 
         // Save the changes to the database
-        //$user->save();
         return $user;
     }
 
     public function delete(User $user): void
     {
-        //$user->delete();
         $existingUser = User::find($user->id);
 
         if ($existingUser) {
@@ -65,8 +59,6 @@ class UserRepository implements UserRepositoryInterface
     public function getAll(int $page = 1, int $perPage = 10)
     {
         return User::with('details')->paginate($perPage, ['*'], 'page', $page);
-        // $users = User::with('details')->paginate(config('defaultsetting.pagination_limit'));
 
-        // return $users;
     }
 }

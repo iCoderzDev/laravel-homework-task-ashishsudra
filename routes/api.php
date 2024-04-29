@@ -17,10 +17,5 @@ use App\Http\Controllers\API\UserController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::controller(UserController::class)->group(function () {
-    Route::post('/users', 'store');
-    Route::put('/users/{user}', 'update');
-    Route::delete('/users/{user}', 'destroy');
-    Route::get('/users', 'index');
-    Route::post('/login','login');
-});
+Route::resource('users', UserController::class);
+Route::post('login',[UserController::class,'login']);

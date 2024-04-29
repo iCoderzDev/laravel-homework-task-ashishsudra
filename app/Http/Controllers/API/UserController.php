@@ -154,7 +154,7 @@ class UserController extends Controller
             $credentials = $request->only('email', 'password');
             $token = Auth::attempt($credentials);
             if (!$token) {
-                return $this->responseService->error('Unauthorized', Response::HTTP_UNAUTHORIZED, []);
+                return $this->responseService->unAuthorize('Unauthorized', Response::HTTP_UNAUTHORIZED, []);
             }
             return $this->responseService->success(['token' => 'bearer '.$token], Response::HTTP_OK, 'User Login successfully');
         } catch (Throwable $th) {
