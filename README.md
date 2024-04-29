@@ -23,7 +23,6 @@
 4. Generate an application key: `php artisan key:generate`
 5. Run the database migrations: `php artisan migrate`
 6. Seed the database with sample data: `php artisan db:seed`
-7. API Collection: `https://documenter.getpostman.com/view/15937310/2sA3BuXV5p`
 
 
 ## Usage
@@ -33,4 +32,6 @@ To start the development server, run `php artisan serve` and visit `http://local
 To generate the API documentation, run `php artisan l5-swagger:generate` and visit `http://localhost:8000/api/documentation` in your browser.
 
 To run Test case  `php artisan test`
+
+Postman API Collection: `https://documenter.getpostman.com/view/15937310/2sA3BuXV5p`
 
