@@ -10,7 +10,7 @@
 
 ## Installation
 
-1. Clone the repository: `git clone https://gitlab.com/icoderz_development/icoderz-demo-laravel/laravel-api.git`
+1. Clone the repository: `git clone https://github.com/iCoderzDev/laravel-homework-task-ashishsudra.git`
 2. Install PHP dependencies: `composer install`
 3. Copy the `.env.example` file to `.env` and update the database credentials
     Replace DB connection
