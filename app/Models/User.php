@@ -10,6 +10,18 @@ use Laravel\Sanctum\HasApiTokens;
 use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @OA\Schema(
+ *     schema="User",
+ *     description="User object",
+ *     @OA\Property(property="id", type="integer", example="1"),
+ *     @OA\Property(property="name", type="string", example="John Doe"),
+ *     @OA\Property(property="email", type="string", format="email", example="john.doe@example.com"),
+ *     @OA\Property(property="address", type="string", example="123 Main St"),
+ *     @OA\Property(property="created_at", type="string", format="date-time", example="2024-04-30T10:00:00Z"),
+ *     @OA\Property(property="updated_at", type="string", format="date-time", example="2024-04-30T10:00:00Z")
+ * )
+ */
 class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes;

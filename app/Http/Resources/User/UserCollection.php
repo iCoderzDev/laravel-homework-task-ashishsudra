@@ -6,6 +6,17 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
+/**
+ * @OA\Schema(
+ *     schema="UserCollection",
+ *     description="Collection of users",
+ *     type="object",
+ *     @OA\Property(property="data", type="array", @OA\Items(ref="#/components/schemas/User")),
+ *     @OA\Property(property="total", type="integer", example="10"),
+ *     @OA\Property(property="per_page", type="integer", example="10"),
+ * )
+ */
+
 class UserCollection extends ResourceCollection
 {
     /**
@@ -15,7 +26,6 @@ class UserCollection extends ResourceCollection
      */
     public function toArray(Request $request): array
     {
-        //dd($request->query('pagination'));
         return [
             'data' => $this->collection,
             'total' => $this->total(), //$request->query('pagination') == 'false' ? $this->collection->count() : $this->total(),
